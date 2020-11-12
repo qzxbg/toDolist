@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var countBinarySubstrings = function (s) {
+            let all = 0
+            //匹配字符串，拿出连续0和1字段，返回数组
+            let m = s.match(/([1]+)|([0]+)/g)
+            console.log(m);
+            //排除杂项
+            if (m.length > 1) {
+                //循环比较相加减
+                for (let i = 0; i < m.length - 1; i++) {
+                    console.log(m[i].length,m[i+1].length)
+                    all += Math.min(m[i].length, m[i + 1].length)
+                    console.log(all);
+                }
+            }
+            return all
+        };
+        countBinarySubstrings("00110011")
+    </script>
+</body>
+
+</html>

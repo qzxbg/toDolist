@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var findRepeatNumber = function (nums) {
+            let repeatNum;
+            let arr = [];
+            nums.forEach((item) => {
+                if (repeatNum) {
+                    return
+                } else {
+                    if (arr.indexOf(item) === -1) {
+                        arr.push(item)
+                    } else {
+                        repeatNum = item;
+                    }
+                }
+
+            })
+            return repeatArr;
+        };
+        let repeat = findRepeatNumber([2, 3, 1, 0, 2, 5, 3]);
+        console.log(repeat)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /**
+ * @param {string} s
+ * @return {boolean}
+ */
+        var isValid = function (s) {
+            let stack = [];
+            let isValid = true;
+            try {
+                s.split("").forEach(str => {
+                    if (str == "(") {
+                        stack.push("(")
+                    } else if (str == ")") {
+                        if (stack.pop() != "(") {
+                            isValid = false
+                        }
+                    } else if (str == "{") {
+                        stack.push("{")
+                    } else if (str == "}") {
+                        if (stack.pop() != "{") {
+                            isValid = false;
+                        }
+                    } else if (str == "[") {
+                        stack.push("[")
+                    } else if (str == "]") {
+                        if (stack.pop() != "[") {
+                            isValid = false;
+                        }
+                    }
+
+                })
+                if (stack.length == 0 && isValid == true) {
+                    return true
+                } else {
+                    return false;
+                }
+            }catch{
+                return false;
+            }
+            };
+            isValid("({)}")
+    </script>
+</body>
+
+</html>
